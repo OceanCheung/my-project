@@ -32,6 +32,7 @@
 
 <script>
 import card from "@/components/card";
+import { loginSucessApi } from "@/api/login.js";
 
 export default {
   data() {
@@ -63,17 +64,22 @@ export default {
       });
     },
     clickHandle(msg, ev) {
-      console.log("clickHandle:", msg, ev);
+      // console.log("clickHandle:", msg, ev);
     },
     goToMain() {
       const url = "/pages/counter/main";
       wx.navigateTo({ url });
+    },
+    async testApi() {
+      const data = await loginSucessApi();
+      console.log(data);
     }
   },
 
   created() {
     // 调用应用实例的方法获取全局数据
     this.getUserInfo();
+    this.testApi();
   }
 };
 </script>

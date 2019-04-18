@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import App from './App'
-import $store from './store/store';
-import _store from "./vuex/index";
+import $store from './store/index';
+
+//将全局对象管理绑定到原型上
 Vue.prototype.$store = $store
-Vue.prototype._store = _store
 
 Vue.config.productionTip = false
 App.mpType = 'app'
